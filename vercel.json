@@ -1,5 +1,5 @@
 {
-    "outputDirectory": "dist/putra-t-api",
+    "outputDirectory": "dist",
     "rewrites": [
         {
             "source": "/(.*)",
