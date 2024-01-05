@@ -1,9 +1,9 @@
 {
-    "outputDirectory": "dist/putra-t-api",
+    "outputDirectory": ".",
     "rewrites": [
         {
             "source": "/(.*)",
-            "destination": "/dist"
+            "destination": "/dist/putra-t-api/main.js"
         }
     ]
 }
