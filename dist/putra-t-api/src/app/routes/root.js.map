@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../../src/app/routes/root.ts"],
+  "sourcesContent": ["import { FastifyInstance } from 'fastify';\n\nexport default async function (fastify: FastifyInstance) {\n  fastify.get('/', async function () {\n    return { message: 'Hello API' };\n  });\n}"],
+  "mappings": ";;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAEA,eAAO,aAAwB,SAA0B;AACvD,UAAQ,IAAI,KAAK,iBAAkB;AACjC,WAAO,EAAE,SAAS,YAAY;AAAA,EAChC,CAAC;AACH;",
+  "names": []
+}

@@ -25,3 +25,4 @@ async function root_default(fastify) {
     return { message: "Hello API" };
   });
 }
+//# sourceMappingURL=root.js.map

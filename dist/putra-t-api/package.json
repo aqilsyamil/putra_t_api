@@ -15,6 +15,7 @@
     "axios": "1.6.4",
     "fastify": "4.13.0",
     "fastify-plugin": "4.5.1",
+    "nx-cloud": "16.5.2",
     "tslib": "2.6.2"
   },
   "main": "./main.js",
