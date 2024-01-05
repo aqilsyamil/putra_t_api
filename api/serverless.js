@@ -16,6 +16,10 @@ const app = Fastify({
 app.register(import("../src/app"));
 
 export default async (req, res) => {
+  try {
     await app.ready();
     app.server.emit('request', req, res);
+  } catch (e) {
+    console.log(e)
+  }
 }
