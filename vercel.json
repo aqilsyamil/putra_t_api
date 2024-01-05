@@ -1,8 +1,8 @@
 {
-    "rewrites": [
+  "rewrites": [
       {
-        "source": "/(.*)",
-        "destination": "/api/serverless.ts"
+          "source": "/(.*)",
+          "destination": "/api/serverless.js"
       }
-    ]
-  }
+  ]
+}

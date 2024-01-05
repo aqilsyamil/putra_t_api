@@ -1,7 +1,12 @@
-import { FastifyInstance } from 'fastify';
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import type { FastifyReply, FastifyRequest } from "fastify";
 
-export default async function (fastify: FastifyInstance) {
-  fastify.get('/', async function () {
-    return { message: 'Hello API' };
+export default async function routes(fastify, options) {
+  fastify.get("/", async (request: FastifyRequest, reply: FastifyReply) => {
+    return { hello: "world" };
+  });
+
+  fastify.get("/hi", async (request: FastifyRequest, reply: FastifyReply) => {
+    return { hi: "zakiego" };
   });
 }

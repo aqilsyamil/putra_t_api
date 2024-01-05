@@ -17,12 +17,15 @@ var __copyProps = (to, from, except, desc) => {
 var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 var root_exports = {};
 __export(root_exports, {
-  default: () => root_default
+  default: () => routes
 });
 module.exports = __toCommonJS(root_exports);
-async function root_default(fastify) {
-  fastify.get("/", async function() {
-    return { message: "Hello API" };
+async function routes(fastify, options) {
+  fastify.get("/", async (request, reply) => {
+    return { hello: "world" };
+  });
+  fastify.get("/hi", async (request, reply) => {
+    return { hi: "zakiego" };
   });
 }
 //# sourceMappingURL=root.js.map
