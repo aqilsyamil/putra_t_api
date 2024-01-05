@@ -1,3 +1,9 @@
 {
-    "rewrites": [{ "source": "/(.*)", "destination": "/dist/main.js" }]
+    "outputDirectory": "build",
+    "rewrites": [
+        {
+            "source": "/(.*)",
+            "destination": "/dist"
+        }
+    ]
 }
