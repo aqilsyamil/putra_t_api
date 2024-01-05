@@ -3,7 +3,7 @@
     "rewrites": [
         {
             "source": "/(.*)",
-            "destination": "/dist/putra-t-api/main.js"
+            "destination": "/dist/putra-t-api"
         }
     ]
 }
