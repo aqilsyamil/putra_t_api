@@ -13,7 +13,7 @@ const app = Fastify({
 });
 
 // Register your application as a normal plugin.
-app.register(import("../src/app/app"));
+app.register(import("../dist/putra-t-api/main.js"));
 
 export default async (req, res) => {
     await app.ready();
