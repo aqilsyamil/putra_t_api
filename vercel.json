@@ -2,7 +2,7 @@
     "rewrites": [
         {
             "source": "/(.*)",
-            "destination": "/dist/putra-t-api/main.js"
+            "destination": "/api/serverless.js"
         }
     ]
 }
