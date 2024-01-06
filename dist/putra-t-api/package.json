@@ -9,6 +9,7 @@
     "vercel-build": "echo hello"
   },
   "private": true,
+  "type": "commonjs",
   "dependencies": {
     "@fastify/autoload": "5.7.2",
     "@fastify/sensible": "5.2.0",
@@ -19,6 +20,5 @@
     "nx-cloud": "16.5.2",
     "tslib": "2.6.2"
   },
-  "main": "./main.js",
-  "type": "commonjs"
+  "main": "./main.js"
 }

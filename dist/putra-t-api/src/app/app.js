@@ -30,8 +30,8 @@ __export(app_exports, {
   app: () => app
 });
 module.exports = __toCommonJS(app_exports);
-var path = __toESM(require("path"));
-var import_autoload = __toESM(require("@fastify/autoload"));
+var path = __toESM(require("path"), 1);
+var import_autoload = __toESM(require("@fastify/autoload"), 1);
 async function app(fastify, opts) {
   fastify.register(import_autoload.default, {
     dir: path.join(__dirname, "plugins"),
@@ -46,4 +46,3 @@ async function app(fastify, opts) {
 0 && (module.exports = {
   app
 });
-//# sourceMappingURL=app.js.map

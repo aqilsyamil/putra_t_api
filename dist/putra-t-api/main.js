@@ -40,4 +40,3 @@ function isFile(s) {
   }
 }
 require("./src/main.js");
-//# sourceMappingURL=main.js.map

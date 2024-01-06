@@ -30,9 +30,8 @@ __export(sensible_exports, {
   default: () => sensible_default
 });
 module.exports = __toCommonJS(sensible_exports);
-var import_fastify_plugin = __toESM(require("fastify-plugin"));
-var import_sensible = __toESM(require("@fastify/sensible"));
+var import_fastify_plugin = __toESM(require("fastify-plugin"), 1);
+var import_sensible = __toESM(require("@fastify/sensible"), 1);
 var sensible_default = (0, import_fastify_plugin.default)(async function(fastify) {
   fastify.register(import_sensible.default);
 });
-//# sourceMappingURL=sensible.js.map

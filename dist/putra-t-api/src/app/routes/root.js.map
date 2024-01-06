@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../../../../src/app/routes/root.ts"],
-  "sourcesContent": ["/* eslint-disable @typescript-eslint/no-unused-vars */\nimport type { FastifyReply, FastifyRequest } from \"fastify\";\n\nexport default async function routes(fastify, options) {\n  fastify.get(\"/\", async (request: FastifyRequest, reply: FastifyReply) => {\n    return { hello: \"world\" };\n  });\n\n  fastify.get(\"/hi\", async (request: FastifyRequest, reply: FastifyReply) => {\n    return { hi: \"zakiego\" };\n  });\n}"],
-  "mappings": ";;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAGA,eAAO,OAA8B,SAAS,SAAS;AACrD,UAAQ,IAAI,KAAK,OAAO,SAAyB,UAAwB;AACvE,WAAO,EAAE,OAAO,QAAQ;AAAA,EAC1B,CAAC;AAED,UAAQ,IAAI,OAAO,OAAO,SAAyB,UAAwB;AACzE,WAAO,EAAE,IAAI,UAAU;AAAA,EACzB,CAAC;AACH;",
-  "names": []
-}

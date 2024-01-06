@@ -20,7 +20,7 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
   isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
   mod
 ));
-var import_fastify = __toESM(require("fastify"));
+var import_fastify = __toESM(require("fastify"), 1);
 var import_app = require("./app/app");
 const host = process.env.HOST ?? "localhost";
 const port = process.env.PORT ? Number(process.env.PORT) : 3e3;
@@ -36,4 +36,3 @@ server.listen({ port, host }, (err) => {
     console.log(`[ ready ] http://${host}:${port}`);
   }
 });
-//# sourceMappingURL=main.js.map
