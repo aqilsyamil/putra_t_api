@@ -10,6 +10,8 @@ ENV HOST=0.0.0.0
 ENV PORT=3000
 
 WORKDIR /app
+COPY package*.json .
+COPY prisma ./prisma/ 
 
 RUN addgroup --system putra-t-api && \
           adduser --system -G putra-t-api putra-t-api
