@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../src/app/app.ts"],
+  "sourcesContent": ["import * as path from 'path';\nimport { FastifyInstance } from 'fastify';\nimport AutoLoad from '@fastify/autoload';\n\n/* eslint-disable-next-line */\nexport interface AppOptions {}\n\nexport async function app(fastify: FastifyInstance, opts: AppOptions) {\n  // Place here your custom code!\n\n  // Do not touch the following lines\n\n  // This loads all plugins defined in plugins\n  // those should be support plugins that are reused\n  // through your application\n  fastify.register(AutoLoad, {\n    dir: path.join(__dirname, 'plugins'),\n    options: { ...opts },\n  });\n\n  // This loads all plugins defined in routes\n  // define your routes in one of these\n  fastify.register(AutoLoad, {\n    dir: path.join(__dirname, 'routes'),\n    options: { ...opts },\n  });\n}\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,WAAsB;AAEtB,sBAAqB;AAKrB,eAAsB,IAAI,SAA0B,MAAkB;AAQpE,UAAQ,SAAS,gBAAAA,SAAU;AAAA,IACzB,KAAK,KAAK,KAAK,WAAW,SAAS;AAAA,IACnC,SAAS,EAAE,GAAG,KAAK;AAAA,EACrB,CAAC;AAID,UAAQ,SAAS,gBAAAA,SAAU;AAAA,IACzB,KAAK,KAAK,KAAK,WAAW,QAAQ;AAAA,IAClC,SAAS,EAAE,GAAG,KAAK;AAAA,EACrB,CAAC;AACH;",
+  "names": ["AutoLoad"]
+}

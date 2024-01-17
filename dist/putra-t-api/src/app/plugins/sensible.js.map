@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../../src/app/plugins/sensible.ts"],
+  "sourcesContent": ["import { FastifyInstance } from 'fastify';\nimport fp from 'fastify-plugin';\nimport sensible from '@fastify/sensible';\n\n/**\n * This plugins adds some utilities to handle http errors\n *\n * @see https://github.com/fastify/fastify-sensible\n */\nexport default fp(async function (fastify: FastifyInstance) {\n  fastify.register(sensible);\n});\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AACA,4BAAe;AACf,sBAAqB;AAOrB,IAAO,uBAAQ,sBAAAA,SAAG,eAAgB,SAA0B;AAC1D,UAAQ,SAAS,gBAAAC,OAAQ;AAC3B,CAAC;",
+  "names": ["fp", "sensible"]
+}

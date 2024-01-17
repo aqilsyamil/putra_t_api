@@ -2,6 +2,7 @@
   "name": "@putra-t-api/source",
   "version": "0.0.0",
   "license": "MIT",
+  "main": "./main.js",
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
@@ -19,6 +20,5 @@
     "fastify-plugin": "4.5.1",
     "nx-cloud": "16.5.2",
     "tslib": "2.6.2"
-  },
-  "main": "./main.js"
+  }
 }

@@ -13,6 +13,7 @@
   "dependencies": {
     "@fastify/autoload": "~5.7.1",
     "@fastify/sensible": "~5.2.0",
+    "@prisma/client": "^5.8.1",
     "axios": "^1.0.0",
     "dotenv": "^16.3.1",
     "fastify": "~4.13.0",
@@ -41,6 +42,7 @@
     "jest-environment-node": "^29.4.1",
     "nx": "^17.2.8",
     "prettier": "^2.6.2",
+    "prisma": "^5.8.1",
     "ts-jest": "^29.1.0",
     "ts-node": "10.9.1",
     "typescript": "~5.2.2"

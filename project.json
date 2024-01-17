@@ -13,7 +13,7 @@
         "outputPath": "dist/putra-t-api",
         "format": ["cjs"],
         "bundle": false,
-        "main": "api/serverless.js",
+        "main": "src/main.ts",
         "tsConfig": "tsconfig.app.json",
         "assets": ["src/assets"],
         "generatePackageJson": true,
