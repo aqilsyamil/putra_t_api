@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../../src/app/routes/books.ts"],
+  "sourcesContent": ["import * as booksController from '../controllers/books'\r\n\r\nconst bookRoutes = [{\r\n    method: 'GET',\r\n       url: '/api/books',\r\n       handler: booksController.getAllBooks\r\n    },\r\n    {\r\n       method: 'GET',\r\n       url: '/api/books/:id',\r\n       handler: booksController.getBook\r\n    },\r\n    {\r\n       method: 'POST',\r\n       url: '/api/books',\r\n       handler: booksController.addBook\r\n    },\r\n    {\r\n       method: 'PUT',\r\n       url: '/api/books/:id',\r\n       handler: booksController.updateBook\r\n    },\r\n    {\r\n       method: 'DELETE',\r\n       url: '/api/books/:id',\r\n       handler: booksController.deleteBook\r\n    }\r\n    ]\r\n\r\nexport default bookRoutes;"],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,sBAAiC;AAEjC,MAAM,aAAa;AAAA,EAAC;AAAA,IAChB,QAAQ;AAAA,IACL,KAAK;AAAA,IACL,SAAS,gBAAgB;AAAA,EAC5B;AAAA,EACA;AAAA,IACG,QAAQ;AAAA,IACR,KAAK;AAAA,IACL,SAAS,gBAAgB;AAAA,EAC5B;AAAA,EACA;AAAA,IACG,QAAQ;AAAA,IACR,KAAK;AAAA,IACL,SAAS,gBAAgB;AAAA,EAC5B;AAAA,EACA;AAAA,IACG,QAAQ;AAAA,IACR,KAAK;AAAA,IACL,SAAS,gBAAgB;AAAA,EAC5B;AAAA,EACA;AAAA,IACG,QAAQ;AAAA,IACR,KAAK;AAAA,IACL,SAAS,gBAAgB;AAAA,EAC5B;AACA;AAEJ,IAAO,gBAAQ;",
+  "names": []
+}

@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../../../../src/app/data/items.ts"],
-  "sourcesContent": ["const books = [\r\n  {\r\n    id: 1,\r\n    title: 'Maharana Pratap : The Invincible Warrior',\r\n    author: 'Rima Hooja'\r\n  },\r\n  {\r\n    id: 2,\r\n    title: 'Prithviraj Chauhan - A Light on the Mist in History',\r\n    author: 'Virendra Singh Rathore'\r\n  },\r\n  {\r\n    id: 3,\r\n    title: 'Rani Laxmibai: Warrior-Queen of Jhansi',\r\n    author: 'Pratibha Ranade'\r\n  }\r\n]\r\n\r\nexport default books "],
-  "mappings": ";;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,MAAM,QAAQ;AAAA,EACZ;AAAA,IACE,IAAI;AAAA,IACJ,OAAO;AAAA,IACP,QAAQ;AAAA,EACV;AAAA,EACA;AAAA,IACE,IAAI;AAAA,IACJ,OAAO;AAAA,IACP,QAAQ;AAAA,EACV;AAAA,EACA;AAAA,IACE,IAAI;AAAA,IACJ,OAAO;AAAA,IACP,QAAQ;AAAA,EACV;AACF;AAEA,IAAO,gBAAQ;",
-  "names": []
-}
