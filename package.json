@@ -4,7 +4,7 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "start": "nx serve",
+    "start": "prisma generate && nx serve",
     "build": "npx prisma db push && npx prisma generate && nx build",
     "test": "nx test",
     "migrate": "prisma migrate deploy",
