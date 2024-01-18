@@ -35,4 +35,3 @@ var import_sensible = __toESM(require("@fastify/sensible"), 1);
 var sensible_default = (0, import_fastify_plugin.default)(async function(fastify) {
   fastify.register(import_sensible.default);
 });
-//# sourceMappingURL=sensible.js.map

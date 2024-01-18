@@ -59,4 +59,3 @@ const bookRoutes = [
   }
 ];
 var books_default = bookRoutes;
-//# sourceMappingURL=books.js.map

@@ -89,4 +89,3 @@ const deleteBook = async (req, reply) => {
   getBook,
   updateBook
 });
-//# sourceMappingURL=books.js.map

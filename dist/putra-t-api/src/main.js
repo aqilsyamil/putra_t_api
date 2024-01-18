@@ -36,4 +36,3 @@ server.listen({ port, host }, (err) => {
     console.log(`[ ready ] http://${host}:${port}`);
   }
 });
-//# sourceMappingURL=main.js.map

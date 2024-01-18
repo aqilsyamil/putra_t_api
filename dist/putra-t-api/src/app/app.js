@@ -46,4 +46,3 @@ async function app(fastify, opts) {
 0 && (module.exports = {
   app
 });
-//# sourceMappingURL=app.js.map

@@ -16,10 +16,15 @@ RUN addgroup --system putra-t-api && \
 
 COPY dist/putra-t-api putra-t-api
 COPY prisma ./prisma/
+COPY package.json ./
 RUN chown -R putra-t-api:putra-t-api .
 
 # You can remove this install step if you build with `--bundle` option.
 # The bundled output will include external dependencies.
+ENV MYSQL_URL=mysql://root:3G2FAdgE2344a6eDCBHH-dGbdB3hFgBb@monorail.proxy.rlwy.net:51601/railway
 RUN npm --prefix putra-t-api --omit=dev -f install
+RUN npm i -g prisma
+RUN prisma db push
+RUN prisma generate
 
 CMD [ "node", "putra-t-api" ]

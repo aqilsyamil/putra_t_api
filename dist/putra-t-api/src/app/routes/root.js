@@ -142,4 +142,3 @@ async function routes(fastify, options) {
     return { hi: "zakiego" };
   });
 }
-//# sourceMappingURL=root.js.map

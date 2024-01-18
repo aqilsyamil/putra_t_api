@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../../src/main.ts"],
-  "sourcesContent": ["import Fastify from 'fastify';\nimport { app } from './app/app';\n\nconst host = process.env.HOST ?? 'localhost';\nconst port = process.env.PORT ? Number(process.env.PORT) : 3000;\n\n// Instantiate Fastify with some config\nconst server = Fastify({\n  logger: true,\n});\n\n// Register your application as a normal plugin.\nserver.register(app);\n\n// Start listening.\nserver.listen({ port, host }, (err) => {\n  if (err) {\n    server.log.error(err);\n    process.exit(1);\n  } else {\n    console.log(`[ ready ] http://${host}:${port}`);\n  }\n});\n"],
-  "mappings": ";;;;;;;;;;;;;;;;;;;;;;AAAA,qBAAoB;AACpB,iBAAoB;AAEpB,MAAM,OAAO,QAAQ,IAAI,QAAQ;AACjC,MAAM,OAAO,QAAQ,IAAI,OAAO,OAAO,QAAQ,IAAI,IAAI,IAAI;AAG3D,MAAM,aAAS,eAAAA,SAAQ;AAAA,EACrB,QAAQ;AACV,CAAC;AAGD,OAAO,SAAS,cAAG;AAGnB,OAAO,OAAO,EAAE,MAAM,KAAK,GAAG,CAAC,QAAQ;AACrC,MAAI,KAAK;AACP,WAAO,IAAI,MAAM,GAAG;AACpB,YAAQ,KAAK,CAAC;AAAA,EAChB,OAAO;AACL,YAAQ,IAAI,oBAAoB,IAAI,IAAI,IAAI,EAAE;AAAA,EAChD;AACF,CAAC;",
-  "names": ["Fastify"]
-}
