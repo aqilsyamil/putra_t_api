@@ -15,6 +15,7 @@ RUN addgroup --system putra-t-api && \
           adduser --system -G putra-t-api putra-t-api
 
 COPY dist/putra-t-api putra-t-api
+COPY prisma ./prisma/
 RUN chown -R putra-t-api:putra-t-api .
 
 # You can remove this install step if you build with `--bundle` option.
