@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nx serve",
-    "start:production": "prisma generate && nx run putra-t-api:serve:production",   
+    "start:production": "prisma generate && nx run putra-t-api:serve:production",
     "build": "npx prisma db push && npx prisma generate && nx build",
     "test": "nx test",
     "migrate": "prisma migrate deploy",
