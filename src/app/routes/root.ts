@@ -200,7 +200,7 @@ export default async function routes(fastify: FastifyInstance, options) {
   }, 
   async (request: FastifyRequest, reply: FastifyReply) => {
     return reply.send({
-      message: 'Hello World',
+      message: 'Hello Worldssss',
       result: null
     });
   });

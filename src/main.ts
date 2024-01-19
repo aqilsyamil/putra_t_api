@@ -2,26 +2,36 @@ import Fastify from 'fastify';
 import { app } from './app/app';
 import fastifySwagger from '@fastify/swagger';
 import fastifySwaggerUi from '@fastify/swagger-ui';
+import cors from '@fastify/cors';
 
 const host = process.env.HOST ?? 'localhost';
 const port = process.env.PORT ? Number(process.env.PORT) : 3000;
-const url = process.env.DOMAIN_URL
 
 // Instantiate Fastify with some config
 const server = Fastify({
   logger: true,
 });
 
+server.register(cors, {
+  origin: ['http://localhost:8080', 'http://127.0.0.1:8080', 'http://localhost:3000'],
+  methods: ['GET', 'PUT', 'PATCH', 'POST', 'DELETE']
+})
+
 server.register(fastifySwagger, {
   openapi: {
     info: {
-      title: 'Forest Fire API',
-      description: 'Forest Fire API Documentation',
+      title: 'Putra T API',
+      description: 'Putra T API Documentation',
       version: '1.0.0'
     },
     servers: [
       {
-        url: url
+        url: `http://${host}:${port}`,
+        description: "Development server"
+      },
+      {
+        url: `http://127.0.0.1:3000`,
+        description: "Docker server"
       }
     ],
     components: {
@@ -49,18 +59,12 @@ server.register(fastifySwaggerUi, {
     deepLinking: false
   },
   uiHooks: {
-    onRequest: function (_request, _reply, next) {
-      next();
-    },
-    preHandler: function (_request, _reply, next) {
-      next();
-    }
+    onRequest: function (request, reply, next) { next() },
+    preHandler: function (request, reply, next) { next() }
   },
   staticCSP: true,
   transformStaticCSP: (header) => header,
-  transformSpecification: (swaggerObject) => {
-    return swaggerObject;
-  },
+  transformSpecification: (swaggerObject) => { return swaggerObject },
   transformSpecificationClone: true
 });
 
@@ -86,7 +90,7 @@ async function start() {
 
   server.swagger;
 }
-
+// hello
 start().catch((err) => {
   server.log.error(err);
   process.exit(1);
