@@ -6,6 +6,7 @@
 # Run the container with `docker run -p 3000:3000 -t api`.
 FROM docker.io/node:lts-alpine
 
+ENV DOMAIN_URL=https://putratapi-production.up.railway.app
 ENV HOST=0.0.0.0
 ENV PORT=3000
 ENV MYSQL_URL=mysql://root:3G2FAdgE2344a6eDCBHH-dGbdB3hFgBb@monorail.proxy.rlwy.net:51601/railway

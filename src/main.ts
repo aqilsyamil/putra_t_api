@@ -5,6 +5,7 @@ import fastifySwaggerUi from '@fastify/swagger-ui';
 
 const host = process.env.HOST ?? 'localhost';
 const port = process.env.PORT ? Number(process.env.PORT) : 3000;
+const url = process.env.DOMAIN_URL ?? `http://${host}:${port}`;
 
 // Instantiate Fastify with some config
 const server = Fastify({
@@ -20,7 +21,7 @@ server.register(fastifySwagger, {
     },
     servers: [
       {
-        url: `http://${host}:${port}`
+        url: url
       }
     ],
     components: {
