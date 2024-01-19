@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nx serve",
-    "start:production": "npx nx build && npx nx docker-build && docker run -p 3000:3000 -t putra-t-api",
+    "start:production": "sh start-prod.sh",
     "build": "nx build",
     "test": "nx test",
     "migrate": "prisma migrate deploy",

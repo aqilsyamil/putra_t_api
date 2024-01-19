@@ -31,7 +31,15 @@ server.register(fastifySwagger, {
       },
       {
         url: `http://127.0.0.1:3000`,
+        description: "PreProd server"
+      },
+      {
+        url: `http://localhost:3000`,
         description: "Docker server"
+      },
+      {
+        url: `https://putratapi-production.up.railway.app`,
+        description: "Production server"
       }
     ],
     components: {

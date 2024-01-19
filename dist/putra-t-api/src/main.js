@@ -24,21 +24,39 @@ var import_fastify = __toESM(require("fastify"), 1);
 var import_app = require("./app/app");
 var import_swagger = __toESM(require("@fastify/swagger"), 1);
 var import_swagger_ui = __toESM(require("@fastify/swagger-ui"), 1);
+var import_cors = __toESM(require("@fastify/cors"), 1);
 const host = process.env.HOST ?? "localhost";
 const port = process.env.PORT ? Number(process.env.PORT) : 3e3;
 const server = (0, import_fastify.default)({
   logger: true
 });
+server.register(import_cors.default, {
+  origin: ["http://localhost:8080", "http://127.0.0.1:8080", "http://localhost:3000"],
+  methods: ["GET", "PUT", "PATCH", "POST", "DELETE"]
+});
 server.register(import_swagger.default, {
   openapi: {
     info: {
-      title: "Forest Fire API",
-      description: "Forest Fire API Documentation",
+      title: "Putra T API",
+      description: "Putra T API Documentation",
       version: "1.0.0"
     },
     servers: [
       {
-        url: `http://${host}:${port}`
+        url: `http://${host}:${port}`,
+        description: "Development server"
+      },
+      {
+        url: `http://127.0.0.1:3000`,
+        description: "PreProd server"
+      },
+      {
+        url: `http://localhost:3000`,
+        description: "Docker server"
+      },
+      {
+        url: `https://putratapi-production.up.railway.app`,
+        description: "Production server"
       }
     ],
     components: {
@@ -64,10 +82,10 @@ server.register(import_swagger_ui.default, {
     deepLinking: false
   },
   uiHooks: {
-    onRequest: function(_request, _reply, next) {
+    onRequest: function(request, reply, next) {
       next();
     },
-    preHandler: function(_request, _reply, next) {
+    preHandler: function(request, reply, next) {
       next();
     }
   },
