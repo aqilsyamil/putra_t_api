@@ -181,8 +181,28 @@ export default async function routes(fastify: FastifyInstance, options) {
   }
   
 
-  fastify.get("/", async (request: FastifyRequest, reply: FastifyReply) => {
-    return { hello: "world" };
+  fastify.get("/",
+  {
+    schema: {
+      description: 'Root endpoint',
+      tags: ['Root'],
+      response: {
+        200: {
+          description: 'Succesful response',
+          type: 'object',
+          properties: {
+            message: { type: 'string' },
+            result: { type: 'object', nullable: true }
+          }
+        }
+      }
+    }
+  }, 
+  async (request: FastifyRequest, reply: FastifyReply) => {
+    return reply.send({
+      message: 'Hello World',
+      result: null
+    });
   });
 
   fastify.get("/hi", async (request: FastifyRequest, reply: FastifyReply) => {

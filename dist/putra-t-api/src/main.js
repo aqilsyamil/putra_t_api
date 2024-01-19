@@ -22,17 +22,71 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
 ));
 var import_fastify = __toESM(require("fastify"), 1);
 var import_app = require("./app/app");
+var import_swagger = __toESM(require("@fastify/swagger"), 1);
+var import_swagger_ui = __toESM(require("@fastify/swagger-ui"), 1);
 const host = process.env.HOST ?? "localhost";
 const port = process.env.PORT ? Number(process.env.PORT) : 3e3;
 const server = (0, import_fastify.default)({
   logger: true
 });
-server.register(import_app.app);
-server.listen({ port, host }, (err) => {
-  if (err) {
-    server.log.error(err);
-    process.exit(1);
-  } else {
-    console.log(`[ ready ] http://${host}:${port}`);
+server.register(import_swagger.default, {
+  openapi: {
+    info: {
+      title: "Forest Fire API",
+      description: "Forest Fire API Documentation",
+      version: "1.0.0"
+    },
+    servers: [
+      {
+        url: `http://${host}:${port}`
+      }
+    ],
+    components: {
+      securitySchemes: {
+        bearerAuth: {
+          type: "http",
+          scheme: "bearer"
+        }
+      }
+    },
+    tags: [
+      {
+        name: "Root",
+        description: "Root endpoints"
+      }
+    ]
   }
+});
+server.register(import_swagger_ui.default, {
+  routePrefix: "/docs",
+  uiConfig: {
+    docExpansion: "full",
+    deepLinking: false
+  },
+  uiHooks: {
+    onRequest: function(_request, _reply, next) {
+      next();
+    },
+    preHandler: function(_request, _reply, next) {
+      next();
+    }
+  },
+  staticCSP: true,
+  transformStaticCSP: (header) => header,
+  transformSpecification: (swaggerObject) => {
+    return swaggerObject;
+  },
+  transformSpecificationClone: true
+});
+server.register(import_app.app);
+async function start() {
+  await server.listen({
+    host,
+    port
+  });
+  server.swagger;
+}
+start().catch((err) => {
+  server.log.error(err);
+  process.exit(1);
 });

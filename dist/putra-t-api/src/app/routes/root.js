@@ -135,9 +135,31 @@ async function routes(fastify, options) {
     });
     return posts;
   });
-  fastify.get("/", async (request, reply) => {
-    return { hello: "world" };
-  });
+  fastify.get(
+    "/",
+    {
+      schema: {
+        description: "Root endpoint",
+        tags: ["Root"],
+        response: {
+          200: {
+            description: "Succesful response",
+            type: "object",
+            properties: {
+              message: { type: "string" },
+              result: { type: "object", nullable: true }
+            }
+          }
+        }
+      }
+    },
+    async (request, reply) => {
+      return reply.send({
+        message: "Hello World",
+        result: null
+      });
+    }
+  );
   fastify.get("/hi", async (request, reply) => {
     return { hi: "zakiego" };
   });
