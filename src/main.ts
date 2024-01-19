@@ -7,6 +7,8 @@ const host = process.env.HOST ?? 'localhost';
 const port = process.env.PORT ? Number(process.env.PORT) : 3000;
 const url = process.env.DOMAIN_URL ?? `http://${host}:${port}`;
 
+console.log(process.env.DOMAIN_URL)
+
 // Instantiate Fastify with some config
 const server = Fastify({
   logger: true,
