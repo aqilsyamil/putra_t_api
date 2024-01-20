@@ -5,8 +5,8 @@
   "main": "./main.js",
   "scripts": {
     "start": "nx serve",
-    "start:production": "sh start-prod.sh",
-    "build": "nx build",
+    "start:docker": "npm run build && npx nx docker-build && docker run -p 3000:3000 -t putra-t-api",
+    "build": "sh build.sh",
     "test": "nx test",
     "migrate": "prisma migrate deploy",
     "postinstall": "prisma generate"
