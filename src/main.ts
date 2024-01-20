@@ -49,7 +49,13 @@ server.register(fastifySwagger, {
           scheme: 'bearer'
         }
       }
-    }
+    },
+    tags: [
+      {
+        name: 'Root',
+        description: 'Root endpoints'
+      }
+    ]
   }
 });
 

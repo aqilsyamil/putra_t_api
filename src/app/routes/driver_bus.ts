@@ -8,6 +8,22 @@ const prisma = new PrismaClient();
 export default async function driver_bus_routes(fastify: FastifyInstance, options) {
     fastify.get(
         '/driver_buses',
+        {
+          schema: {
+            description: 'Root endpoint',
+            tags: ['Root'],
+            response: {
+              200: {
+                description: 'Succesful response',
+                type: 'object',
+                properties: {
+                  message: { type: 'string' },
+                  result: { type: 'object', nullable: true }
+                }
+              }
+            }
+          }
+        },
         async function (request: FastifyRequest, reply: FastifyReply) {
     
           try {
@@ -25,6 +41,22 @@ export default async function driver_bus_routes(fastify: FastifyInstance, option
    */
     fastify.get(
       '/driver_bus/:id',
+      {
+        schema: {
+          description: 'Root endpoint',
+          tags: ['Root'],
+          response: {
+            200: {
+              description: 'Succesful response',
+              type: 'object',
+              properties: {
+                message: { type: 'string' },
+                result: { type: 'object', nullable: true }
+              }
+            }
+          }
+        }
+      },
       async function (
         request: FastifyRequest<{ Params: IParams }>,
         reply: FastifyReply
@@ -53,6 +85,7 @@ export default async function driver_bus_routes(fastify: FastifyInstance, option
       {
         schema: {
           description: 'post some data',
+          tags: ['Root'],
           summary: 'qwerty',
           body: {
             type: 'object',
@@ -116,6 +149,7 @@ export default async function driver_bus_routes(fastify: FastifyInstance, option
     {
       schema: {
         description: 'post some data',
+        tags: ['Root'],
         summary: 'qwerty',
         params: {
           type: 'object',
@@ -190,6 +224,22 @@ export default async function driver_bus_routes(fastify: FastifyInstance, option
 
   fastify.delete(
     '/driver_bus/:id',
+    {
+      schema: {
+        description: 'Root endpoint',
+        tags: ['Root'],
+        response: {
+          200: {
+            description: 'Succesful response',
+            type: 'object',
+            properties: {
+              message: { type: 'string' },
+              result: { type: 'object', nullable: true }
+            }
+          }
+        }
+      }
+    },
     async function (
       request: FastifyRequest<{
         Params: IParams;

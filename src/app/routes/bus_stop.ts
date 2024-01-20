@@ -11,6 +11,22 @@ export default async function bus_stop_routes(fastify: FastifyInstance, options)
    */
     fastify.get(
         '/bus_stops',
+        {
+          schema: {
+            description: 'Root endpoint',
+            tags: ['Root'],
+            response: {
+              200: {
+                description: 'Succesful response',
+                type: 'object',
+                properties: {
+                  message: { type: 'string' },
+                  result: { type: 'object', nullable: true }
+                }
+              }
+            }
+          }
+        },
         async function (request: FastifyRequest, reply: FastifyReply) {
     
           try {
@@ -28,6 +44,22 @@ export default async function bus_stop_routes(fastify: FastifyInstance, options)
    */
   fastify.get(
     '/bus_stop/:id',
+    {
+      schema: {
+        description: 'Root endpoint',
+        tags: ['Root'],
+        response: {
+          200: {
+            description: 'Succesful response',
+            type: 'object',
+            properties: {
+              message: { type: 'string' },
+              result: { type: 'object', nullable: true }
+            }
+          }
+        }
+      }
+    },
     async function (
       request: FastifyRequest<{ Params: IParams }>,
       reply: FastifyReply
