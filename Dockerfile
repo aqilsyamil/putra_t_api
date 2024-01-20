@@ -20,7 +20,7 @@ WORKDIR /app/putra-t-api
 
 # Run npm install in the putra-t-api directory
 RUN npm install
-RUN npx prisma db pull && npx prisma generate
+RUN npx prisma db push && npx prisma generate
 
 WORKDIR /app
 
