@@ -66,13 +66,7 @@ server.register(import_swagger.default, {
           scheme: "bearer"
         }
       }
-    },
-    tags: [
-      {
-        name: "Root",
-        description: "Root endpoints"
-      }
-    ]
+    }
   }
 });
 server.register(import_swagger_ui.default, {
