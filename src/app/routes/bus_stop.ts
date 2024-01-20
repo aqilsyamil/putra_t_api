@@ -5,7 +5,7 @@ import { IParams } from "./interfaces/interface";
 
 const prisma = new PrismaClient();
 
-export default async function bus_stop_routes(fastify: FastifyInstance, options) {
+export default async function (fastify: FastifyInstance, options) {
     /**
    * GET all bus_stop
    */

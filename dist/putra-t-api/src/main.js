@@ -31,7 +31,7 @@ const server = (0, import_fastify.default)({
   logger: true
 });
 server.register(import_cors.default, {
-  origin: ["http://localhost:8080", "http://127.0.0.1:8080", "http://localhost:3000"],
+  origin: ["https://putratapi-production.up.railway.app", "http://localhost:8080", "http://127.0.0.1:8080", "http://localhost:3000"],
   methods: ["GET", "PUT", "PATCH", "POST", "DELETE"]
 });
 server.register(import_swagger.default, {

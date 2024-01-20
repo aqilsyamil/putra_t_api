@@ -21,4 +21,7 @@ __export(root_exports, {
 });
 module.exports = __toCommonJS(root_exports);
 async function routes(fastify, options) {
+  fastify.get("/", async function(request, reply) {
+    return { root: true };
+  });
 }
