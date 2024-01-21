@@ -39,6 +39,7 @@ async function app(fastify, opts) {
   });
   fastify.register(import_autoload.default, {
     dir: path.join(__dirname, "routes"),
+    dirNameRoutePrefix: false,
     options: { ...opts }
   });
 }
