@@ -5,7 +5,7 @@ import { IParams } from "./interfaces/interface"
 
 const prisma = new PrismaClient();
 
-export default async function (fastify: FastifyInstance, options) {
+export default async function routes(fastify: FastifyInstance, options) {
     /**
    * GET all bus_route
    */
