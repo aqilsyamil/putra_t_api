@@ -15,23 +15,23 @@ export default async function bus_route_routes(fastify: FastifyInstance, options
           schema: {
             description: 'Root endpoint',
             tags: ['Root'],
-            response: {
-              200: {
-                description: 'Succesful response',
-                type: 'object',
-                properties: {
-                  message: { type: 'string' },
-                  result: { type: 'object', nullable: true }
-                }
-              }
-            }
+            // response: {
+            //   200: {
+            //     description: 'Succesful response',
+            //     type: 'object',
+            //     properties: {
+            //       message: { type: 'string' },
+            //       result: { type: 'object', nullable: true }
+            //     }
+            //   }
+            // }
           }
         },
         async function (request: FastifyRequest, reply: FastifyReply) {
     
           try {
             const bus_routes = await prisma.bus_route.findMany()
-            return bus_routes
+            return reply.send(bus_routes)
     
           } catch (error) {
             console.error(error);
@@ -42,41 +42,41 @@ export default async function bus_route_routes(fastify: FastifyInstance, options
     /**
    * GET one bus_route by id
    */
-  fastify.get(
-    '/bus_route/:id',
-    {
-      schema: {
-        description: 'Root endpoint',
-        tags: ['Root'],
-        response: {
-          200: {
-            description: 'Succesful response',
-            type: 'object',
-            properties: {
-              message: { type: 'string' },
-              result: { type: 'object', nullable: true }
-            }
-          }
+    fastify.get(
+      '/bus_route/:id',
+      {
+        schema: {
+          description: 'Root endpoint',
+          tags: ['Root'],
+          // response: {
+          //   200: {
+          //     description: 'Succesful response',
+          //     type: 'object',
+          //     properties: {
+          //       message: { type: 'string' },
+          //       result: { type: 'object', nullable: true }
+          //     }
+          //   }
+          // }
+        }
+      },
+      async function (
+        request: FastifyRequest<{ Params: IParams }>,
+        reply: FastifyReply
+      ) {
+
+        const { id } = request.params;
+
+        try {
+          const bus_route = await prisma.bus_route.findUnique({
+              where: { id: id},
+            })
+          
+          return bus_route
+
+        } catch (error) {
+          console.error(error);
         }
       }
-    },
-    async function (
-      request: FastifyRequest<{ Params: IParams }>,
-      reply: FastifyReply
-    ) {
-
-      const { id } = request.params;
-
-      try {
-        const bus_route = await prisma.bus_route.findUnique({
-            where: { id: id},
-          })
-        
-        return bus_route
-
-      } catch (error) {
-        console.error(error);
-      }
-    }
-  );
+    );
 }

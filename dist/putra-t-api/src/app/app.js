@@ -39,8 +39,7 @@ async function app(fastify, opts) {
   });
   fastify.register(import_autoload.default, {
     dir: path.join(__dirname, "routes"),
-    dirNameRoutePrefix: false,
-    options: Object.assign({}, opts)
+    options: { ...opts }
   });
 }
 // Annotate the CommonJS export names for ESM import in node:

@@ -5,23 +5,23 @@ import { IParams } from "./interfaces/interface";
 
 const prisma = new PrismaClient();
 
-export default async function routes(fastify: FastifyInstance, options) {
+export default async function driver_bus_routes(fastify: FastifyInstance, options) {
     fastify.get(
         '/driver_buses',
         {
           schema: {
             description: 'Root endpoint',
             tags: ['Root'],
-            response: {
-              200: {
-                description: 'Succesful response',
-                type: 'object',
-                properties: {
-                  message: { type: 'string' },
-                  result: { type: 'object', nullable: true }
-                }
-              }
-            }
+            // response: {
+            //   200: {
+            //     description: 'Succesful response',
+            //     type: 'object',
+            //     properties: {
+            //       message: { type: 'string' },
+            //       result: { type: 'object', nullable: true }
+            //     }
+            //   }
+            // }
           }
         },
         async function (request: FastifyRequest, reply: FastifyReply) {
@@ -45,16 +45,16 @@ export default async function routes(fastify: FastifyInstance, options) {
         schema: {
           description: 'Root endpoint',
           tags: ['Root'],
-          response: {
-            200: {
-              description: 'Succesful response',
-              type: 'object',
-              properties: {
-                message: { type: 'string' },
-                result: { type: 'object', nullable: true }
-              }
-            }
-          }
+          // response: {
+          //   200: {
+          //     description: 'Succesful response',
+          //     type: 'object',
+          //     properties: {
+          //       message: { type: 'string' },
+          //       result: { type: 'object', nullable: true }
+          //     }
+          //   }
+          // }
         }
       },
       async function (
@@ -98,22 +98,22 @@ export default async function routes(fastify: FastifyInstance, options) {
               bus_lng: { type: 'number' },
             }
           },
-          response: {
-            201: {
-              description: 'Successful response',
-              type: 'object',
-              properties: {
-                hello: { type: 'string' }
-              }
-            },
-            default: {
-              description: 'Default response',
-              type: 'object',
-              properties: {
-                foo: { type: 'string' }
-              }
-            }
-          }
+          // response: {
+          //   201: {
+          //     description: 'Successful response',
+          //     type: 'object',
+          //     properties: {
+          //       hello: { type: 'string' }
+          //     }
+          //   },
+          //   default: {
+          //     description: 'Default response',
+          //     type: 'object',
+          //     properties: {
+          //       foo: { type: 'string' }
+          //     }
+          //   }
+          // }
         }
       },
       async function (
@@ -170,22 +170,22 @@ export default async function routes(fastify: FastifyInstance, options) {
             bus_lng: { type: 'number' },
           }
         },
-        response: {
-          201: {
-            description: 'Successful response',
-            type: 'object',
-            properties: {
-              hello: { type: 'string' }
-            }
-          },
-          default: {
-            description: 'Default response',
-            type: 'object',
-            properties: {
-              foo: { type: 'string' }
-            }
-          }
-        }
+        // response: {
+        //   201: {
+        //     description: 'Successful response',
+        //     type: 'object',
+        //     properties: {
+        //       hello: { type: 'string' }
+        //     }
+        //   },
+        //   default: {
+        //     description: 'Default response',
+        //     type: 'object',
+        //     properties: {
+        //       foo: { type: 'string' }
+        //     }
+        //   }
+        // }
       }
     },
     async function (
@@ -228,16 +228,16 @@ export default async function routes(fastify: FastifyInstance, options) {
       schema: {
         description: 'Root endpoint',
         tags: ['Root'],
-        response: {
-          200: {
-            description: 'Succesful response',
-            type: 'object',
-            properties: {
-              message: { type: 'string' },
-              result: { type: 'object', nullable: true }
-            }
-          }
-        }
+        // response: {
+        //   200: {
+        //     description: 'Succesful response',
+        //     type: 'object',
+        //     properties: {
+        //       message: { type: 'string' },
+        //       result: { type: 'object', nullable: true }
+        //     }
+        //   }
+        // }
       }
     },
     async function (

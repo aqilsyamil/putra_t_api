@@ -5,7 +5,7 @@ import { IParams } from "./interfaces/interface"
 
 const prisma = new PrismaClient();
 
-export default async function routes(fastify: FastifyInstance, options) {
+export default async function driver_routes(fastify: FastifyInstance, options) {
     /**
    * GET all drivers
    */
@@ -15,16 +15,16 @@ export default async function routes(fastify: FastifyInstance, options) {
       schema: {
         description: 'Root endpoint',
         tags: ['Root'],
-        response: {
-          200: {
-            description: 'Succesful response',
-            type: 'object',
-            properties: {
-              message: { type: 'string' },
-              result: { type: 'object', nullable: true }
-            }
-          }
-        }
+        // response: {
+        //   200: {
+        //     description: 'Succesful response',
+        //     type: 'object',
+        //     properties: {
+        //       message: { type: 'string' },
+        //       result: { type: 'object', nullable: true }
+        //     }
+        //   }
+        // }
       }
     },
     async function (request: FastifyRequest, reply: FastifyReply) {
@@ -48,16 +48,16 @@ export default async function routes(fastify: FastifyInstance, options) {
       schema: {
         description: 'Root endpoint',
         tags: ['Root'],
-        response: {
-          200: {
-            description: 'Succesful response',
-            type: 'object',
-            properties: {
-              message: { type: 'string' },
-              result: { type: 'object', nullable: true }
-            }
-          }
-        }
+        // response: {
+        //   200: {
+        //     description: 'Succesful response',
+        //     type: 'object',
+        //     properties: {
+        //       message: { type: 'string' },
+        //       result: { type: 'object', nullable: true }
+        //     }
+        //   }
+        // }
       }
     },
     async function (
