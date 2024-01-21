@@ -8,7 +8,6 @@ export interface AppOptions {}
 export async function app(fastify: FastifyInstance, opts: AppOptions) {
   // Place here your custom code!
   // Register @fastify/swagger plugin.
-
   // Do not touch the following lines
   // This loads all plugins defined in plugins
   // those should be support plugins that are reused
@@ -23,6 +22,6 @@ export async function app(fastify: FastifyInstance, opts: AppOptions) {
   fastify.register(AutoLoad, {
     dir: path.join(__dirname, 'routes'),
     dirNameRoutePrefix: false,
-    options: { ...opts },
+    options: Object.assign({}, opts),
   });
 }
