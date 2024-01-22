@@ -2,7 +2,7 @@ import Fastify from 'fastify';
 import { app } from './app/app';
 import fastifySwagger from '@fastify/swagger';
 import fastifySwaggerUi from '@fastify/swagger-ui';
-import cors from '@fastify/cors';
+import fastifyCors from '@fastify/cors';
 
 const host = process.env.HOST ?? 'localhost';
 const port = process.env.PORT ? Number(process.env.PORT) : 3000;
@@ -12,7 +12,7 @@ const server = Fastify({
   logger: true,
 });
 
-server.register(cors, {
+server.register(fastifyCors, {
   origin: '*',
   methods: ['GET', 'PUT', 'PATCH', 'POST', 'DELETE']
 })
