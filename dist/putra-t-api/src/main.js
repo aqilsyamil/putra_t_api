@@ -76,7 +76,7 @@ server.register(import_swagger.default, {
   }
 });
 server.register(import_swagger_ui.default, {
-  routePrefix: "/docs",
+  routePrefix: "/",
   uiConfig: {
     docExpansion: "full",
     deepLinking: false

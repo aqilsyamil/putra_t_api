@@ -13,7 +13,7 @@ const server = Fastify({
 });
 
 server.register(cors, {
-  origin: ['https://putratapi-production.up.railway.app', 'http://localhost:8080', 'http://127.0.0.1:8080', 'http://localhost:3000'],
+  origin: '*',
   methods: ['GET', 'PUT', 'PATCH', 'POST', 'DELETE']
 })
 
@@ -61,7 +61,7 @@ server.register(fastifySwagger, {
 
 // Register @fastify/swagger-ui plugin.
 server.register(fastifySwaggerUi, {
-  routePrefix: '/docs',
+  routePrefix: '/',
   uiConfig: {
     docExpansion: 'full',
     deepLinking: false
